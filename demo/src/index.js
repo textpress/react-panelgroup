@@ -42,7 +42,7 @@ var code4 =
   <Content>panel 3</Content>
 </PanelGroup>`;
 
-let Demo = React.createClass({
+class Demo extends React.Component {
   render() {
     var containerStyle = {
       width: 640,
@@ -112,7 +112,7 @@ let Demo = React.createClass({
       </div>
     )
   }
-})
+}
 
 let DefaultLayout = function(props) {
   return (
@@ -160,9 +160,9 @@ let NestedLayout = function(props) {
 let DefinedLayout = function(props) {
   return (
     <PanelGroup borderColor="#DDD" spacing={2} panelWidths={[
-      {size: 100, minSize:50, resize: "dynamic"},
-      {minSize:100, resize: "stretch"},
-      {size: 100, minSize:50, resize: "dynamic"}
+      {size: 100, minSize:50, resize: "dynamic", snap: [100]},
+      {minSize:100, resize: "stretch", snap: [100]},
+      {size: 100, minSize:50, resize: "dynamic", snap: [100]}
     ]}>
       <Content>panel 1</Content>
       <Content>panel 2</Content>
